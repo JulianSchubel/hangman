@@ -42,7 +42,7 @@ window.addEventListener("keypress", (event) => {
 })
 
 window.addEventListener("click", (event) => {
-    window.focus();
+    window.document.getElementById("textField").focus();
 })
 
 wordCount.addEventListener("change", (event) => {
