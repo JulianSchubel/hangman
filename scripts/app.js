@@ -41,6 +41,10 @@ window.addEventListener("keypress", (event) => {
     }
 })
 
+window.addEventListener("click", (event) => {
+    window.focus();
+})
+
 wordCount.addEventListener("change", (event) => {
     words = event.target.value;
 });
