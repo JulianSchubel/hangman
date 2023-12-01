@@ -1,5 +1,6 @@
 const getPuzzle = async (wordCount) => {
-    const response = await fetch(`https://puzzle.mead.io/puzzle?wordCount=${wordCount}`);
+    /* excluding the protocol will cause it to resolve to the protocol of the request source */
+    const response = await fetch(`//puzzle.mead.io/puzzle?wordCount=${wordCount}`);
     if(response.status === 200) {
         const data = await response.json();
         return data.puzzle;
@@ -9,7 +10,7 @@ const getPuzzle = async (wordCount) => {
 }
 
 const getCountry = async (countryCode) => {
-    const response = await fetch(`https://restcountries.com/v3.1/alpha/${countryCode}`);
+    const response = await fetch(`//restcountries.com/v3.1/alpha/${countryCode}`);
     if(response.status === 200) {
         const data = await response.json();
         return data.find( (element) => element.cca2.toLowerCase() === countryCode.toLowerCase());
@@ -19,7 +20,7 @@ const getCountry = async (countryCode) => {
 }
 
 const ipinfoAccessToken = "1be888983f9de0";
-const ipinfoEndpoint = "https://ipinfo.io/json";
+const ipinfoEndpoint = "//ipinfo.io/json";
 
 const getLocation = async () => {
     const response = await fetch(`${ipinfoEndpoint}?token=${ipinfoAccessToken}`);
