@@ -28,6 +28,9 @@ class Hangman {
         if(isUnique) {
             /* only store the lower case varient to simplify comparisons against guessedLetters */
             this.guessedLetters.push(lowerCaseLetter);
+            /* using spread syntax 
+             * guessedLetters = [...guessedLetters, lowerCaseLetter];
+             * */
             console.log(this.guessedLetters);
             /* if no match in word; reduce remainingGuesses */
             if(isBadGuess) {
@@ -57,4 +60,8 @@ class Hangman {
             return `Nice try! The phrase was: ${this.word.join('')}`;
         };
     }
+}
+
+export {
+    Hangman as default
 }

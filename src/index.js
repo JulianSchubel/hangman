@@ -1,5 +1,8 @@
 "use strict";
 
+import Hangman from "./hangman"
+import getPuzzle from "./requests"
+
 const wordCount = window.document.querySelector("#wordCount");
 const maxGuesses = window.document.querySelector("#maxGuesses");
 const puzzle = window.document.querySelector("#puzzle");
@@ -49,8 +52,9 @@ maxGuesses.addEventListener("change", (event) => {
     guesses = event.target.value;
 });
 
-reset.addEventListener("click", async (e) => {
+reset.addEventListener("click", async () => {
     startGame();
 });
 
 startGame();
+
